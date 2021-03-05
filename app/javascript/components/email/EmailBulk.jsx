@@ -200,7 +200,7 @@ class EmailBulk extends Component {
                 </div>
                 {this.props.user && !this.props.user.is_activated && (
                     <div className="mt-3 alert alert-dark" role="alert">
-                        Note: Please contact admin to unable this feature.
+                        Note: Please contact admin to enable this feature.
                     </div>
                 )}
                 <br />

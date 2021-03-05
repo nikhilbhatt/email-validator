@@ -18,6 +18,7 @@ class Email < ApplicationRecord
       csv << column_names
       rows.each do |row|
         values = row.values
+        next unless values[0].is_a? String
         res = Truemail.validate(values[0])
         additional_values_for_row = res.result.success ? ["Valid"] : ["Invalid"]
         values += additional_values_for_row
