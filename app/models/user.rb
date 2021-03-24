@@ -6,8 +6,10 @@ class User < ApplicationRecord
   validates :email, uniqueness: { case_sensitive: false }, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :password, presence: true
   validates :has_role, presence: true
+  validates :username, uniqueness: { case_sensitive: false }, on: :create
 
   has_many :emails
+  has_many :attachments
 
   def encrypt_password
     self.password = BCrypt::Password.create(password)
