@@ -1,0 +1,4 @@
+---
+:pidfile: tmp/pids/sidekiq_mcheck.pid
+:queues:
+  - [default, 5]
